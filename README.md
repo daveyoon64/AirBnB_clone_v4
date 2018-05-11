@@ -212,6 +212,8 @@ github repo
 
 ## Authors
 
+* Nick Boutboul, [raid55](https://github.com/raid55)
+* Dave Yoon, [@daveyoon64](https://github.com/daveyoon64)
 * MJ Johnson, [@mj31508](https://github.com/mj31508)
 * David John Coleman II, [davidjohncoleman.com](http://www.davidjohncoleman.com/) | [@djohncoleman](https://twitter.com/djohncoleman)
 * Kimberly Wong, [kjowong](https://github.com/kjowong) | [@kjowong](https://twitter.com/kjowong) | [kjowong@gmail.com](kjowong@gmail.com)
