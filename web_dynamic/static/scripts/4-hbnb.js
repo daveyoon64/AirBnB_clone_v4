@@ -1,6 +1,7 @@
 $(() => {
+  let ids = [];
+  let names = []; 
   function generate_places(data) {
-    console.log(data)
     let retStr = "";
     for (let i in data) {
       retStr += `
@@ -53,13 +54,24 @@ $(() => {
     }
   });
   $('UL.popover > LI > INPUT').change(() => {
-    let ids = $('UL.popover > LI > INPUT:checkbox:checked').map(function () {
+    ids = $('UL.popover > LI > INPUT:checkbox:checked').map(function () {
       return $(this).data('id');
     }).get(); 
-    let names = $('UL.popover > LI > INPUT:checkbox:checked').map(function () {
+    names = $('UL.popover > LI > INPUT:checkbox:checked').map(function () {
       return $(this).data('name');
     }).get(); 
     $('DIV.amenities > h4').text(names.join(', '));    
     console.log(ids);
+  });
+  // function to collect all amenities
+  $('button').click(function () {
+    $.ajax({
+      type: "POST",
+      url: "http://0.0.0.0:5001/api/v1/places_search/",
+      contentType: 'application/json',
+      data: JSON.stringify({amenities: ids}),
+      success: generate_places,
+      error: e => console.log(e)
+    });
   });
 });
